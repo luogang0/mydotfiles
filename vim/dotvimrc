@@ -5,6 +5,8 @@ call pathogen#infect()              " use pathogen to manage plugins
 syntax on                           " highlight syntax
 filetype plugin indent on           " auto detect file type
 
+set foldmethod=indent
+
 set nocompatible                    " out of Vi compatible mode
 set number                          " show line number
 set numberwidth=3                   " minimal culumns for line numbers
