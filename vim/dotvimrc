@@ -5,7 +5,6 @@ call pathogen#infect()              " use pathogen to manage plugins
 syntax on                           " highlight syntax
 filetype plugin indent on           " auto detect file type
 
-set foldmethod=indent
 
 set nocompatible                    " out of Vi compatible mode
 set number                          " show line number
@@ -19,7 +18,7 @@ set wildmode=list:longest,full      " command completion mode
 set laststatus=2                    " always show the status line
 set mouse=a                         " use mouse in all mode
 set foldenable                      " fold lines
-set foldmethod=marker               " fold as marker 
+set foldmethod=indent               " fold as indent 
 set noerrorbells                    " do not use error bell
 set novisualbell                    " do not use visual bell
 set t_vb=                           " do not use terminal bell
@@ -53,6 +52,7 @@ set termencoding=utf-8
 set fileencoding=utf-8
 set fileencodings=gb2312,utf-8,gbk
 set fileformat=unix
+set fdm=indent
 
 set background=dark
 colorscheme vividchalk
@@ -159,9 +159,9 @@ nmap <Leader>f :NERDTreeToggle<CR>
 nmap <Leader>F :NERDTreeFind<CR>
 
 " snipMate
-let g:snip_author   = "Jeffy Du"
-let g:snip_mail     = "jeffy.du@163.com"
-let g:snip_company  = "SIC Microelectronics CO. Ltd"
+let g:snip_author   = "luogang"
+let g:snip_mail     = "luogang@xunlei.com"
+let g:snip_company  = "Xunlei networking Technologies Co.,Ltd"
 
 " man.vim - view man page in VIM
 source $VIMRUNTIME/ftplugin/man.vim
@@ -185,3 +185,11 @@ endif
 
 " ZoomWin
 nmap <leader>zz <C-w>o
+
+" Some Linux distributions set filetype in /etc/vimrc.                    
+" Clear filetype flags before changing runtimepath to force Vim to reload them.
+filetype off
+filetype plugin indent off    
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on                                                 
+syntax on

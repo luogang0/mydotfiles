@@ -35,7 +35,7 @@ snippet once
 
 	${2}
 
-	#endif /* end of include guard: $1 */
+	#endif /* $1 */
 # If Condition
 snippet if
 	if (${1:/* condition */})
@@ -121,7 +121,7 @@ snippet un
 	unsigned
 # file comment
 snippet file
-	/*
+	/************************************************************
 	 * `expand("%:t")` - ${1}
 	 *
 	 * Copyright (C) `strftime("%Y")` ${2:`g:snip_company`}
@@ -133,5 +133,5 @@ snippet file
 	 * --------
 	 * `strftime("%Y-%m-%d")`	v1.0	$3
 	 *     1. Initial revision.
-	 */
+	 ***********************************************************/
 	${4}
