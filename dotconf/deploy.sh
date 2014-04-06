@@ -1,6 +1,6 @@
 #!/bin/bash
 #sudo apt-get install vim
 #sudo apt-get install ctags cscope
+cd `dirname $0`
 dir=`pwd`
-ln -s $dir/dotvim ~/.vim
-ln -s -f $dir/dotvimrc ~/.vimrc
+ln -s -f $dir/tmux.conf ~/.tmux.conf
